@@ -2,3 +2,369 @@
 2020-08-08 14:57:17===>[main]===>WARN ===>com.allfirst.common.CommonApplicationTests===>这是warn日志...
 2020-08-08 14:57:17===>[main]===>ERROR===>com.allfirst.common.CommonApplicationTests===>这是error日志...
 2020-08-08 14:57:17===>[SpringContextShutdownHook]===>INFO ===>o.s.scheduling.concurrent.ThreadPoolTaskExecutor===>Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-08 15:16:10===>[main]===>INFO ===>o.s.scheduling.concurrent.ThreadPoolTaskExecutor===>Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-08 15:16:10===>[main]===>INFO ===>o.s.b.a.web.servlet.WelcomePageHandlerMapping===>Adding welcome page: class path resource [public/index.html]
+2020-08-08 15:16:11===>[main]===>WARN ===>o.s.w.context.support.GenericWebApplicationContext===>Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'viewResolver' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'thymeleafViewResolver' defined in class path resource [org/springframework/boot/autoconfigure/thymeleaf/ThymeleafAutoConfiguration$ThymeleafWebMvcConfiguration$ThymeleafViewResolverConfiguration.class]: Unsatisfied dependency expressed through method 'thymeleafViewResolver' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'templateEngine' defined in class path resource [org/springframework/boot/autoconfigure/thymeleaf/ThymeleafAutoConfiguration$ThymeleafDefaultConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.thymeleaf.spring5.SpringTemplateEngine]: Factory method 'templateEngine' threw exception; nested exception is java.lang.NoSuchMethodError: org.thymeleaf.spring5.SpringTemplateEngine.setRenderHiddenMarkersBeforeCheckboxes(Z)V
+2020-08-08 15:16:11===>[main]===>INFO ===>o.s.scheduling.concurrent.ThreadPoolTaskExecutor===>Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-08 15:16:11===>[main]===>INFO ===>o.s.b.a.l.ConditionEvaluationReportLoggingListener===>
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-08 15:16:11===>[main]===>ERROR===>o.s.b.diagnostics.LoggingFailureAnalysisReporter===>
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafDefaultConfiguration.templateEngine(ThymeleafAutoConfiguration.java:142)
+
+The following method did not exist:
+
+    org.thymeleaf.spring5.SpringTemplateEngine.setRenderHiddenMarkersBeforeCheckboxes(Z)V
+
+The method's class, org.thymeleaf.spring5.SpringTemplateEngine, is available from the following locations:
+
+    jar:file:/D:/maven/maven_repository/org/thymeleaf/thymeleaf-spring5/3.0.9.RELEASE/thymeleaf-spring5-3.0.9.RELEASE.jar!/org/thymeleaf/spring5/SpringTemplateEngine.class
+
+The class hierarchy was loaded from the following locations:
+
+    org.thymeleaf.spring5.SpringTemplateEngine: file:/D:/maven/maven_repository/org/thymeleaf/thymeleaf-spring5/3.0.9.RELEASE/thymeleaf-spring5-3.0.9.RELEASE.jar
+    org.thymeleaf.TemplateEngine: file:/D:/maven/maven_repository/org/thymeleaf/thymeleaf/3.0.9.RELEASE/thymeleaf-3.0.9.RELEASE.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains a single, compatible version of org.thymeleaf.spring5.SpringTemplateEngine
+
+2020-08-08 15:16:11===>[main]===>ERROR===>o.springframework.test.context.TestContextManager===>Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@145f66e3] to prepare test instance [com.allfirst.common.CommonApplicationTests@153d4abb]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:230)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:58)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'viewResolver' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'thymeleafViewResolver' defined in class path resource [org/springframework/boot/autoconfigure/thymeleaf/ThymeleafAutoConfiguration$ThymeleafWebMvcConfiguration$ThymeleafViewResolverConfiguration.class]: Unsatisfied dependency expressed through method 'thymeleafViewResolver' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'templateEngine' defined in class path resource [org/springframework/boot/autoconfigure/thymeleaf/ThymeleafAutoConfiguration$ThymeleafDefaultConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.thymeleaf.spring5.SpringTemplateEngine]: Factory method 'templateEngine' threw exception; nested exception is java.lang.NoSuchMethodError: org.thymeleaf.spring5.SpringTemplateEngine.setRenderHiddenMarkersBeforeCheckboxes(Z)V
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'thymeleafViewResolver' defined in class path resource [org/springframework/boot/autoconfigure/thymeleaf/ThymeleafAutoConfiguration$ThymeleafWebMvcConfiguration$ThymeleafViewResolverConfiguration.class]: Unsatisfied dependency expressed through method 'thymeleafViewResolver' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'templateEngine' defined in class path resource [org/springframework/boot/autoconfigure/thymeleaf/ThymeleafAutoConfiguration$ThymeleafDefaultConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.thymeleaf.spring5.SpringTemplateEngine]: Factory method 'templateEngine' threw exception; nested exception is java.lang.NoSuchMethodError: org.thymeleaf.spring5.SpringTemplateEngine.setRenderHiddenMarkersBeforeCheckboxes(Z)V
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:797)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:624)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:612)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1243)
+	at org.springframework.beans.factory.BeanFactoryUtils.beansOfTypeIncludingAncestors(BeanFactoryUtils.java:329)
+	at org.springframework.web.servlet.view.ContentNegotiatingViewResolver.initServletContext(ContentNegotiatingViewResolver.java:186)
+	at org.springframework.web.context.support.WebApplicationObjectSupport.initApplicationContext(WebApplicationObjectSupport.java:82)
+	at org.springframework.context.support.ApplicationObjectSupport.setApplicationContext(ApplicationObjectSupport.java:78)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.invokeAwareInterfaces(ApplicationContextAwareProcessor.java:123)
+	at org.springframework.context.support.ApplicationContextAwareProcessor.postProcessBeforeInitialization(ApplicationContextAwareProcessor.java:100)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:415)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	... 40 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'templateEngine' defined in class path resource [org/springframework/boot/autoconfigure/thymeleaf/ThymeleafAutoConfiguration$ThymeleafDefaultConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.thymeleaf.spring5.SpringTemplateEngine]: Factory method 'templateEngine' threw exception; nested exception is java.lang.NoSuchMethodError: org.thymeleaf.spring5.SpringTemplateEngine.setRenderHiddenMarkersBeforeCheckboxes(Z)V
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:635)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:884)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
+	... 61 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.thymeleaf.spring5.SpringTemplateEngine]: Factory method 'templateEngine' threw exception; nested exception is java.lang.NoSuchMethodError: org.thymeleaf.spring5.SpringTemplateEngine.setRenderHiddenMarkersBeforeCheckboxes(Z)V
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:650)
+	... 75 common frames omitted
+Caused by: java.lang.NoSuchMethodError: org.thymeleaf.spring5.SpringTemplateEngine.setRenderHiddenMarkersBeforeCheckboxes(Z)V
+	at org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafDefaultConfiguration.templateEngine(ThymeleafAutoConfiguration.java:142)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 76 common frames omitted
+2020-08-08 15:24:23===>[restartedMain]===>INFO ===>o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor===>Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-08 15:24:23===>[restartedMain]===>INFO ===>o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor===>For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-08 15:24:24===>[restartedMain]===>INFO ===>o.s.boot.web.embedded.tomcat.TomcatWebServer===>Tomcat initialized with port(s): 8080 (http)
+2020-08-08 15:24:25===>[restartedMain]===>INFO ===>org.apache.catalina.core.StandardService===>Starting service [Tomcat]
+2020-08-08 15:24:25===>[restartedMain]===>INFO ===>org.apache.catalina.core.StandardEngine===>Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-08 15:24:25===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-08-08 15:24:25===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-08-08 15:24:25===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-08-08 15:24:25===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-08-08 15:24:25===>[restartedMain]===>INFO ===>o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]===>Initializing Spring embedded WebApplicationContext
+2020-08-08 15:24:25===>[restartedMain]===>INFO ===>o.s.b.w.s.c.ServletWebServerApplicationContext===>Root WebApplicationContext: initialization completed in 1351 ms
+2020-08-08 15:24:25===>[restartedMain]===>INFO ===>o.s.scheduling.concurrent.ThreadPoolTaskExecutor===>Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-08 15:24:25===>[restartedMain]===>INFO ===>o.s.b.a.web.servlet.WelcomePageHandlerMapping===>Adding welcome page template: index
+2020-08-08 15:24:25===>[restartedMain]===>WARN ===>o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext===>Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'viewResolver' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'thymeleafViewResolver' defined in class path resource [org/springframework/boot/autoconfigure/thymeleaf/ThymeleafAutoConfiguration$ThymeleafWebMvcConfiguration$ThymeleafViewResolverConfiguration.class]: Unsatisfied dependency expressed through method 'thymeleafViewResolver' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'templateEngine' defined in class path resource [org/springframework/boot/autoconfigure/thymeleaf/ThymeleafAutoConfiguration$ThymeleafDefaultConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.thymeleaf.spring5.SpringTemplateEngine]: Factory method 'templateEngine' threw exception; nested exception is java.lang.NoSuchMethodError: org.thymeleaf.spring5.SpringTemplateEngine.setRenderHiddenMarkersBeforeCheckboxes(Z)V
+2020-08-08 15:24:25===>[restartedMain]===>INFO ===>o.s.scheduling.concurrent.ThreadPoolTaskExecutor===>Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-08 15:24:25===>[restartedMain]===>INFO ===>org.apache.catalina.core.StandardService===>Stopping service [Tomcat]
+2020-08-08 15:24:25===>[restartedMain]===>INFO ===>o.s.b.a.l.ConditionEvaluationReportLoggingListener===>
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-08 15:24:25===>[restartedMain]===>ERROR===>o.s.b.diagnostics.LoggingFailureAnalysisReporter===>
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafDefaultConfiguration.templateEngine(ThymeleafAutoConfiguration.java:142)
+
+The following method did not exist:
+
+    org.thymeleaf.spring5.SpringTemplateEngine.setRenderHiddenMarkersBeforeCheckboxes(Z)V
+
+The method's class, org.thymeleaf.spring5.SpringTemplateEngine, is available from the following locations:
+
+    jar:file:/D:/maven/maven_repository/org/thymeleaf/thymeleaf-spring5/3.0.9.RELEASE/thymeleaf-spring5-3.0.9.RELEASE.jar!/org/thymeleaf/spring5/SpringTemplateEngine.class
+
+The class hierarchy was loaded from the following locations:
+
+    org.thymeleaf.spring5.SpringTemplateEngine: file:/D:/maven/maven_repository/org/thymeleaf/thymeleaf-spring5/3.0.9.RELEASE/thymeleaf-spring5-3.0.9.RELEASE.jar
+    org.thymeleaf.TemplateEngine: file:/D:/maven/maven_repository/org/thymeleaf/thymeleaf/3.0.9.RELEASE/thymeleaf-3.0.9.RELEASE.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains a single, compatible version of org.thymeleaf.spring5.SpringTemplateEngine
+
+2020-08-08 15:25:37===>[restartedMain]===>INFO ===>o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor===>Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-08 15:25:37===>[restartedMain]===>INFO ===>o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor===>For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-08 15:25:37===>[restartedMain]===>INFO ===>o.s.boot.web.embedded.tomcat.TomcatWebServer===>Tomcat initialized with port(s): 8080 (http)
+2020-08-08 15:25:37===>[restartedMain]===>INFO ===>org.apache.catalina.core.StandardService===>Starting service [Tomcat]
+2020-08-08 15:25:37===>[restartedMain]===>INFO ===>org.apache.catalina.core.StandardEngine===>Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-08 15:25:37===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-08-08 15:25:37===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-08-08 15:25:37===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-08-08 15:25:37===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-08-08 15:25:38===>[restartedMain]===>INFO ===>o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]===>Initializing Spring embedded WebApplicationContext
+2020-08-08 15:25:38===>[restartedMain]===>INFO ===>o.s.b.w.s.c.ServletWebServerApplicationContext===>Root WebApplicationContext: initialization completed in 968 ms
+2020-08-08 15:25:38===>[restartedMain]===>INFO ===>o.s.scheduling.concurrent.ThreadPoolTaskExecutor===>Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-08 15:25:38===>[restartedMain]===>INFO ===>o.s.b.a.web.servlet.WelcomePageHandlerMapping===>Adding welcome page template: index
+2020-08-08 15:25:38===>[restartedMain]===>WARN ===>o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext===>Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'viewResolver' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'thymeleafViewResolver' defined in class path resource [org/springframework/boot/autoconfigure/thymeleaf/ThymeleafAutoConfiguration$ThymeleafWebMvcConfiguration$ThymeleafViewResolverConfiguration.class]: Unsatisfied dependency expressed through method 'thymeleafViewResolver' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'templateEngine' defined in class path resource [org/springframework/boot/autoconfigure/thymeleaf/ThymeleafAutoConfiguration$ThymeleafDefaultConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.thymeleaf.spring5.SpringTemplateEngine]: Factory method 'templateEngine' threw exception; nested exception is java.lang.NoSuchMethodError: org.thymeleaf.spring5.SpringTemplateEngine.setRenderHiddenMarkersBeforeCheckboxes(Z)V
+2020-08-08 15:25:38===>[restartedMain]===>INFO ===>o.s.scheduling.concurrent.ThreadPoolTaskExecutor===>Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-08 15:25:38===>[restartedMain]===>INFO ===>org.apache.catalina.core.StandardService===>Stopping service [Tomcat]
+2020-08-08 15:25:38===>[restartedMain]===>INFO ===>o.s.b.a.l.ConditionEvaluationReportLoggingListener===>
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-08 15:25:38===>[restartedMain]===>ERROR===>o.s.b.diagnostics.LoggingFailureAnalysisReporter===>
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafDefaultConfiguration.templateEngine(ThymeleafAutoConfiguration.java:142)
+
+The following method did not exist:
+
+    org.thymeleaf.spring5.SpringTemplateEngine.setRenderHiddenMarkersBeforeCheckboxes(Z)V
+
+The method's class, org.thymeleaf.spring5.SpringTemplateEngine, is available from the following locations:
+
+    jar:file:/D:/maven/maven_repository/org/thymeleaf/thymeleaf-spring5/3.0.9.RELEASE/thymeleaf-spring5-3.0.9.RELEASE.jar!/org/thymeleaf/spring5/SpringTemplateEngine.class
+
+The class hierarchy was loaded from the following locations:
+
+    org.thymeleaf.spring5.SpringTemplateEngine: file:/D:/maven/maven_repository/org/thymeleaf/thymeleaf-spring5/3.0.9.RELEASE/thymeleaf-spring5-3.0.9.RELEASE.jar
+    org.thymeleaf.TemplateEngine: file:/D:/maven/maven_repository/org/thymeleaf/thymeleaf/3.0.9.RELEASE/thymeleaf-3.0.9.RELEASE.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains a single, compatible version of org.thymeleaf.spring5.SpringTemplateEngine
+
+2020-08-08 15:27:53===>[restartedMain]===>INFO ===>o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor===>Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-08 15:27:53===>[restartedMain]===>INFO ===>o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor===>For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-08 15:27:53===>[restartedMain]===>INFO ===>o.s.boot.web.embedded.tomcat.TomcatWebServer===>Tomcat initialized with port(s): 8080 (http)
+2020-08-08 15:27:53===>[restartedMain]===>INFO ===>org.apache.catalina.core.StandardService===>Starting service [Tomcat]
+2020-08-08 15:27:53===>[restartedMain]===>INFO ===>org.apache.catalina.core.StandardEngine===>Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-08 15:27:53===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-08-08 15:27:53===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-08-08 15:27:53===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-08-08 15:27:53===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-08-08 15:27:54===>[restartedMain]===>INFO ===>o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]===>Initializing Spring embedded WebApplicationContext
+2020-08-08 15:27:54===>[restartedMain]===>INFO ===>o.s.b.w.s.c.ServletWebServerApplicationContext===>Root WebApplicationContext: initialization completed in 937 ms
+2020-08-08 15:27:54===>[restartedMain]===>INFO ===>o.s.scheduling.concurrent.ThreadPoolTaskExecutor===>Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-08 15:27:54===>[restartedMain]===>INFO ===>o.s.b.a.web.servlet.WelcomePageHandlerMapping===>Adding welcome page template: index
+2020-08-08 15:27:54===>[restartedMain]===>WARN ===>o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext===>Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'viewResolver' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'thymeleafViewResolver' defined in class path resource [org/springframework/boot/autoconfigure/thymeleaf/ThymeleafAutoConfiguration$ThymeleafWebMvcConfiguration$ThymeleafViewResolverConfiguration.class]: Unsatisfied dependency expressed through method 'thymeleafViewResolver' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'templateEngine' defined in class path resource [org/springframework/boot/autoconfigure/thymeleaf/ThymeleafAutoConfiguration$ThymeleafDefaultConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.thymeleaf.spring5.SpringTemplateEngine]: Factory method 'templateEngine' threw exception; nested exception is java.lang.NoSuchMethodError: org.thymeleaf.spring5.SpringTemplateEngine.setRenderHiddenMarkersBeforeCheckboxes(Z)V
+2020-08-08 15:27:54===>[restartedMain]===>INFO ===>o.s.scheduling.concurrent.ThreadPoolTaskExecutor===>Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-08 15:27:54===>[restartedMain]===>INFO ===>org.apache.catalina.core.StandardService===>Stopping service [Tomcat]
+2020-08-08 15:27:54===>[restartedMain]===>INFO ===>o.s.b.a.l.ConditionEvaluationReportLoggingListener===>
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-08 15:27:54===>[restartedMain]===>ERROR===>o.s.b.diagnostics.LoggingFailureAnalysisReporter===>
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafDefaultConfiguration.templateEngine(ThymeleafAutoConfiguration.java:142)
+
+The following method did not exist:
+
+    org.thymeleaf.spring5.SpringTemplateEngine.setRenderHiddenMarkersBeforeCheckboxes(Z)V
+
+The method's class, org.thymeleaf.spring5.SpringTemplateEngine, is available from the following locations:
+
+    jar:file:/D:/maven/maven_repository/org/thymeleaf/thymeleaf-spring5/3.0.9.RELEASE/thymeleaf-spring5-3.0.9.RELEASE.jar!/org/thymeleaf/spring5/SpringTemplateEngine.class
+
+The class hierarchy was loaded from the following locations:
+
+    org.thymeleaf.spring5.SpringTemplateEngine: file:/D:/maven/maven_repository/org/thymeleaf/thymeleaf-spring5/3.0.9.RELEASE/thymeleaf-spring5-3.0.9.RELEASE.jar
+    org.thymeleaf.TemplateEngine: file:/D:/maven/maven_repository/org/thymeleaf/thymeleaf/3.0.9.RELEASE/thymeleaf-3.0.9.RELEASE.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains a single, compatible version of org.thymeleaf.spring5.SpringTemplateEngine
+
+2020-08-08 15:28:12===>[restartedMain]===>INFO ===>o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor===>Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-08 15:28:12===>[restartedMain]===>INFO ===>o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor===>For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-08 15:28:12===>[restartedMain]===>INFO ===>o.s.boot.web.embedded.tomcat.TomcatWebServer===>Tomcat initialized with port(s): 8080 (http)
+2020-08-08 15:28:12===>[restartedMain]===>INFO ===>org.apache.catalina.core.StandardService===>Starting service [Tomcat]
+2020-08-08 15:28:12===>[restartedMain]===>INFO ===>org.apache.catalina.core.StandardEngine===>Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-08 15:28:12===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-08-08 15:28:12===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-08-08 15:28:12===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-08-08 15:28:12===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-08-08 15:28:13===>[restartedMain]===>INFO ===>o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]===>Initializing Spring embedded WebApplicationContext
+2020-08-08 15:28:13===>[restartedMain]===>INFO ===>o.s.b.w.s.c.ServletWebServerApplicationContext===>Root WebApplicationContext: initialization completed in 956 ms
+2020-08-08 15:28:13===>[restartedMain]===>INFO ===>o.s.scheduling.concurrent.ThreadPoolTaskExecutor===>Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-08 15:28:13===>[restartedMain]===>INFO ===>o.s.b.d.autoconfigure.OptionalLiveReloadServer===>LiveReload server is running on port 35729
+2020-08-08 15:28:13===>[restartedMain]===>INFO ===>o.s.boot.web.embedded.tomcat.TomcatWebServer===>Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-08 15:28:22===>[http-nio-8080-exec-1]===>INFO ===>o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]===>Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-08 15:28:22===>[http-nio-8080-exec-1]===>INFO ===>org.springframework.web.servlet.DispatcherServlet===>Initializing Servlet 'dispatcherServlet'
+2020-08-08 15:28:22===>[http-nio-8080-exec-1]===>INFO ===>org.springframework.web.servlet.DispatcherServlet===>Completed initialization in 4 ms
+2020-08-08 15:29:18===>[Thread-9]===>INFO ===>o.s.scheduling.concurrent.ThreadPoolTaskExecutor===>Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-08 15:29:18===>[restartedMain]===>INFO ===>o.s.boot.web.embedded.tomcat.TomcatWebServer===>Tomcat initialized with port(s): 8080 (http)
+2020-08-08 15:29:18===>[restartedMain]===>INFO ===>org.apache.catalina.core.StandardService===>Starting service [Tomcat]
+2020-08-08 15:29:18===>[restartedMain]===>INFO ===>org.apache.catalina.core.StandardEngine===>Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-08 15:29:18===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-08-08 15:29:18===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-08-08 15:29:18===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-08-08 15:29:18===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-08-08 15:29:18===>[restartedMain]===>INFO ===>o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]===>Initializing Spring embedded WebApplicationContext
+2020-08-08 15:29:18===>[restartedMain]===>INFO ===>o.s.b.w.s.c.ServletWebServerApplicationContext===>Root WebApplicationContext: initialization completed in 251 ms
+2020-08-08 15:29:18===>[restartedMain]===>INFO ===>o.s.scheduling.concurrent.ThreadPoolTaskExecutor===>Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-08 15:29:18===>[restartedMain]===>INFO ===>o.s.b.d.autoconfigure.OptionalLiveReloadServer===>LiveReload server is running on port 35729
+2020-08-08 15:29:18===>[restartedMain]===>INFO ===>o.s.boot.web.embedded.tomcat.TomcatWebServer===>Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-08 15:29:18===>[restartedMain]===>INFO ===>o.s.b.d.a.ConditionEvaluationDeltaLoggingListener===>Condition evaluation unchanged
+2020-08-08 15:29:23===>[http-nio-8080-exec-2]===>INFO ===>o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]===>Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-08 15:29:23===>[http-nio-8080-exec-2]===>INFO ===>org.springframework.web.servlet.DispatcherServlet===>Initializing Servlet 'dispatcherServlet'
+2020-08-08 15:29:23===>[http-nio-8080-exec-2]===>INFO ===>org.springframework.web.servlet.DispatcherServlet===>Completed initialization in 9 ms
+2020-08-08 15:29:30===>[restartedMain]===>INFO ===>o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor===>Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-08 15:29:30===>[restartedMain]===>INFO ===>o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor===>For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-08 15:29:31===>[restartedMain]===>INFO ===>o.s.boot.web.embedded.tomcat.TomcatWebServer===>Tomcat initialized with port(s): 8080 (http)
+2020-08-08 15:29:31===>[restartedMain]===>INFO ===>org.apache.catalina.core.StandardService===>Starting service [Tomcat]
+2020-08-08 15:29:31===>[restartedMain]===>INFO ===>org.apache.catalina.core.StandardEngine===>Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-08 15:29:31===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-08-08 15:29:31===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-08-08 15:29:31===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-08-08 15:29:31===>[restartedMain]===>INFO ===>org.apache.catalina.core.AprLifecycleListener===>OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-08-08 15:29:31===>[restartedMain]===>INFO ===>o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]===>Initializing Spring embedded WebApplicationContext
+2020-08-08 15:29:31===>[restartedMain]===>INFO ===>o.s.b.w.s.c.ServletWebServerApplicationContext===>Root WebApplicationContext: initialization completed in 1070 ms
+2020-08-08 15:29:31===>[restartedMain]===>INFO ===>o.s.scheduling.concurrent.ThreadPoolTaskExecutor===>Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-08 15:29:31===>[restartedMain]===>INFO ===>o.s.b.a.web.servlet.WelcomePageHandlerMapping===>Adding welcome page template: index
+2020-08-08 15:29:31===>[restartedMain]===>WARN ===>o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext===>Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'viewResolver' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'thymeleafViewResolver' defined in class path resource [org/springframework/boot/autoconfigure/thymeleaf/ThymeleafAutoConfiguration$ThymeleafWebMvcConfiguration$ThymeleafViewResolverConfiguration.class]: Unsatisfied dependency expressed through method 'thymeleafViewResolver' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'templateEngine' defined in class path resource [org/springframework/boot/autoconfigure/thymeleaf/ThymeleafAutoConfiguration$ThymeleafDefaultConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.thymeleaf.spring5.SpringTemplateEngine]: Factory method 'templateEngine' threw exception; nested exception is java.lang.NoSuchMethodError: org.thymeleaf.spring5.SpringTemplateEngine.setRenderHiddenMarkersBeforeCheckboxes(Z)V
+2020-08-08 15:29:31===>[restartedMain]===>INFO ===>o.s.scheduling.concurrent.ThreadPoolTaskExecutor===>Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-08 15:29:31===>[restartedMain]===>INFO ===>org.apache.catalina.core.StandardService===>Stopping service [Tomcat]
+2020-08-08 15:29:31===>[restartedMain]===>INFO ===>o.s.b.a.l.ConditionEvaluationReportLoggingListener===>
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-08 15:29:31===>[restartedMain]===>ERROR===>o.s.b.diagnostics.LoggingFailureAnalysisReporter===>
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafDefaultConfiguration.templateEngine(ThymeleafAutoConfiguration.java:142)
+
+The following method did not exist:
+
+    org.thymeleaf.spring5.SpringTemplateEngine.setRenderHiddenMarkersBeforeCheckboxes(Z)V
+
+The method's class, org.thymeleaf.spring5.SpringTemplateEngine, is available from the following locations:
+
+    jar:file:/D:/maven/maven_repository/org/thymeleaf/thymeleaf-spring5/3.0.9.RELEASE/thymeleaf-spring5-3.0.9.RELEASE.jar!/org/thymeleaf/spring5/SpringTemplateEngine.class
+
+The class hierarchy was loaded from the following locations:
+
+    org.thymeleaf.spring5.SpringTemplateEngine: file:/D:/maven/maven_repository/org/thymeleaf/thymeleaf-spring5/3.0.9.RELEASE/thymeleaf-spring5-3.0.9.RELEASE.jar
+    org.thymeleaf.TemplateEngine: file:/D:/maven/maven_repository/org/thymeleaf/thymeleaf/3.0.9.RELEASE/thymeleaf-3.0.9.RELEASE.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains a single, compatible version of org.thymeleaf.spring5.SpringTemplateEngine
+
