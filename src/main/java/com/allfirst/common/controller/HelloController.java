@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class HelloController {
 
-    @RequestMapping("/")
-    public String sayHello(){
-        return "index_th";
-    }
+//    @RequestMapping("/")
+//    public String sayHello(){
+//        return "index_th";
+//    }
 
 
 

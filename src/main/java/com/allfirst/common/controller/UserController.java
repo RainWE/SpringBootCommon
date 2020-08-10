@@ -1,19 +1,11 @@
 package com.allfirst.common.controller;
 
-import com.allfirst.common.domain.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @Controller
 public class UserController {
+
+
     /**
      *  使用Model与前端交互
      * @param username
@@ -21,7 +13,7 @@ public class UserController {
      * @param model
      * @return
      */
-    @PostMapping("/getuser1")
+ /*   @PostMapping("/getuser1")
     public String getUserWithModel(@RequestParam("user") String username,
                           @RequestParam("password") String psw, Model model){
         System.out.println(username);
@@ -30,14 +22,14 @@ public class UserController {
         model.addAttribute("msg",msg);
         return "success_test";
     }
-
+*/
     /**
      * 使用ModelAndView与前端交互
      * @param username
      * @param psw
      * @return
      */
-    @PostMapping("/getuser")
+ /*   @PostMapping("/getuser")
     public ModelAndView  getUserWithModelAndView(@RequestParam("user") String username,
                           @RequestParam("password") String psw){
         ModelAndView mv = new ModelAndView();
@@ -67,7 +59,7 @@ public class UserController {
         mv.setViewName("success_test");
         return mv;
     }
-
+*/
 
 
 }
