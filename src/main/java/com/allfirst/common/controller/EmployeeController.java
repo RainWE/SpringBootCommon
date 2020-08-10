@@ -16,6 +16,8 @@ import java.util.Collection;
  */
 @Controller
 public class EmployeeController {
+  /*
+
     @Autowired
     EmployeeDao employeeDao;
 
@@ -85,6 +87,6 @@ public class EmployeeController {
         return "redirect:/emps";
     }
 
-
+*/
 
 }

@@ -1,34 +1,20 @@
 package com.allfirst.common.dao;
 
 import com.allfirst.common.domain.Department;
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.*;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+@Mapper
+public interface DepartmentDao {
+    @Select("select * from department where id=#{id}")
+    public Department getDeptById(Integer id);
 
+    @Delete("delete from department where id=#{id}")
+    public int deleteDeptById(Integer id);
 
-@Repository
-public class DepartmentDao {
+    @Options(useGeneratedKeys = true,keyProperty = "id")
+    @Insert("insert into department(department_name) values(#{departmentName})")
+    public int insertDept(Department department);
 
-	private static Map<Integer, Department> departments = null;
-	
-	static{
-		departments = new HashMap<Integer, Department>();
-		
-		departments.put(101, new Department(101, "D-AA"));
-		departments.put(102, new Department(102, "D-BB"));
-		departments.put(103, new Department(103, "D-CC"));
-		departments.put(104, new Department(104, "D-DD"));
-		departments.put(105, new Department(105, "D-EE"));
-	}
-	
-	public Collection<Department> getDepartments(){
-		return departments.values();
-	}
-	
-	public Department getDepartment(Integer id){
-		return departments.get(id);
-	}
-	
+    @Update("update department set department_name=#{departmentName} where id=#{id}")
+    public int updateDept(Department department);
 }

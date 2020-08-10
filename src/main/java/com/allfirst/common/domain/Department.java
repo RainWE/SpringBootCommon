@@ -1,37 +1,25 @@
 package com.allfirst.common.domain;
 
-public class Department {
+import java.io.Serializable;
 
-	private Integer id;
-	private String departmentName;
+public class Department implements Serializable {
 
-	public Department() {
-	}
-	
-	public Department(int i, String string) {
-		this.id = i;
-		this.departmentName = string;
-	}
+    private Integer id;
+    private String departmentName;
 
-	public Integer getId() {
-		return id;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
+    }
 
-	public String getDepartmentName() {
-		return departmentName;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setDepartmentName(String departmentName) {
-		this.departmentName = departmentName;
-	}
-
-	@Override
-	public String toString() {
-		return "Department [id=" + id + ", departmentName=" + departmentName + "]";
-	}
-	
+    public String getDepartmentName() {
+        return departmentName;
+    }
 }
