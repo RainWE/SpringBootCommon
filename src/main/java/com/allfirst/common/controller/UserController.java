@@ -2,6 +2,9 @@ package com.allfirst.common.controller;
 
 import org.springframework.stereotype.Controller;
 
+/**
+ * 测试Model和ModelAndView
+ */
 @Controller
 public class UserController {
 

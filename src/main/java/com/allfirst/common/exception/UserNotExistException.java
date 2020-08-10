@@ -1,5 +1,8 @@
 package com.allfirst.common.exception;
 
+/**
+ * 自定义异常
+ */
 public class UserNotExistException extends RuntimeException {
 
     public UserNotExistException() {

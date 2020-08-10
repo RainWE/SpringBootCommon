@@ -9,6 +9,9 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+/**
+ * springmvc配置
+ */
 @Configuration
 public class MyMvcConfig extends WebMvcConfigurerAdapter {
 
@@ -42,7 +45,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
         return adapter;
     }
 
-    //国际化
+    //国际化配置
     @Bean
     public LocaleResolver localeResolver(){
 
