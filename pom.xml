@@ -100,7 +100,24 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
-
+        <!--两种方式操作ES：SpringData ElasticSearch，jest-->
+        <!--SpringBoot默认使用SpringData ElasticSearch模块进行操作ES-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.searchbox/jest -->
+        <!--jest操作ES-->
+        <dependency>
+            <groupId>io.searchbox</groupId>
+            <artifactId>jest</artifactId>
+            <version>5.3.3</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>net.java.dev.jna</groupId>-->
+<!--            <artifactId>jna</artifactId>-->
+<!--            <version>4.1.0</version>-->
+<!--        </dependency>-->
     </dependencies>
 
     <build>

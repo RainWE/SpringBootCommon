@@ -55,3 +55,19 @@ MyMvcConfig.java中加入容器
 ```linux
 docker run -d -p 5672:5672 -p 15672:15672 --name 容器名 容器ID
 ```
+- 检索elasticsearch(注意springbootES需对应ES版本)
+   - 索引对应数据库；类型对应表；文档对应表中记录；属性对应列
+   - SpringBoot默认支持两种技术来和ES交互；
+     - Jest（默认不生效）(测试案例有bug可能是版本问题)
+      	需要导入jest的工具包（io.searchbox.client.JestClient）
+     - SpringData ElasticSearch【ES版本有可能不合适】
+      		版本适配说明：https://github.com/spring-projects/spring-data-elasticsearch
+     		如果版本不适配：2.4.6 。
+     		 1. 升级SpringBoot版本
+    		 2. 安装对应版本的ES
+     
+        1. Client 节点信息clusterNodes；clusterName
+      	2. ElasticsearchTemplate 操作es
+     	3. 编写一个 ElasticsearchRepository 的子接口来操作ES；
+     	4. 两种用法：https://github.com/spring-projects/spring-data-elasticsearch
+     	5. 编写一个 ElasticsearchRepository
