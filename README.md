@@ -71,3 +71,16 @@ docker run -d -p 5672:5672 -p 15672:15672 --name 容器名 容器ID
      	3. 编写一个 ElasticsearchRepository 的子接口来操作ES；
      	4. 两种用法：https://github.com/spring-projects/spring-data-elasticsearch
      	5. 编写一个 ElasticsearchRepository
+- 任务：
+    1. 异步任务：
+     - @EnableAsync：开启基于注解的异步任务
+     - @Async标注的方法，称之为异步方法；这些方法将在执行的时候，将会在独立的线程中被执行，调用者无需等待它的完成，即可继续其他的操作。
+    2. 定时任务：
+     - @EnableScheduling：开启基于注解的定时任务
+     - @Scheduled：代表这是个定时任务，会按照时间定时触发运行标注的方法
+    3. 邮件功能：
+     - 需要引入mail-staster依赖
+     - 配置mail参数application.properties
+     - 操作看Springboot04TaskApplicationTests.java
+- 安全：
+    
