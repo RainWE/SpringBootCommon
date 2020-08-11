@@ -5,6 +5,7 @@ import com.allfirst.common.dao.DepartmentDao;
 import com.allfirst.common.dao.EmployeeDao;
 import com.allfirst.common.domain.Department;
 import com.allfirst.common.domain.Employee;
+import com.allfirst.common.service.DepartmentService;
 import org.apache.ibatis.annotations.ResultMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DeptController {
-
+/*
     @Autowired
     DepartmentDao departmentDao;
 
@@ -39,6 +40,12 @@ public class DeptController {
 
         return employeeDao.getEmpById(id);
     }
+*/
+    @Autowired
+    DepartmentService departmentService;
 
-
+    @GetMapping("/dept/{id}")
+    public Department getDept(@PathVariable("id") Integer id){
+        return departmentService.getDeptById(id);
+    }
 }

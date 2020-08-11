@@ -34,8 +34,11 @@ MyMvcConfig.java中加入容器
            };
        }
 ```
-- 使用Docker
-- 整合Druid数据源
-    
-- 整合mybatis
-    
+- 使用Docker:
+- 整合Druid数据源:配置类DruidConfig.java
+- 整合mybatis:配置类MyBatisConfig.java
+- 缓存:
+   1. @Cacheable:详解看EmployeeServiceImpl.java,EmployeeController.java
+   2. @CacheEvict:详解看EmployeeServiceImpl.java,EmployeeController.java
+   3. @CachePut:详解看EmployeeServiceImpl.java,EmployeeController.java
+   4. redis：spring的cache可以使用redis进行缓存，相结合，使用了缓存管理器。如何整合详解看DepartmentServiceImpl.java,DeptController.java

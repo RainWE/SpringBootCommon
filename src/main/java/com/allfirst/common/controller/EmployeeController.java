@@ -4,6 +4,7 @@ import com.allfirst.common.dao.DepartmentDao;
 import com.allfirst.common.dao.EmployeeDao;
 import com.allfirst.common.domain.Department;
 import com.allfirst.common.domain.Employee;
+import com.allfirst.common.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,11 +13,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 /**
- * 员工CRUD
+ *
  */
-@Controller
+//@Controller
+@RestController
 public class EmployeeController {
-  /*
+  /*员工RestfulCRUD测试
 
     @Autowired
     EmployeeDao employeeDao;
@@ -89,4 +91,31 @@ public class EmployeeController {
 
 */
 
+
+    @Autowired
+    EmployeeService employeeService;
+    //测试cache缓存中的三个注解
+    @GetMapping("/emp/{id}")
+    public Employee getEmployee(@PathVariable("id") Integer id){
+        Employee employee = employeeService.getEmp(id);
+        return employee;
+    }
+    //测试cache缓存中的三个注解
+    @GetMapping("/emp")
+    public Employee update(Employee employee){
+        Employee emp = employeeService.updateEmp(employee);
+
+        return emp;
+    }
+    //测试cache缓存中的三个注解
+    @GetMapping("/delemp")
+    public String deleteEmp(Integer id){
+        employeeService.deleteEmp(id);
+        return "success";
+    }
+    //测试cache缓存中的三个注解
+    @GetMapping("/emp/lastname/{lastName}")
+    public Employee getEmpByLastName(@PathVariable("lastName") String lastName){
+        return employeeService.getEmpByLastName(lastName);
+    }
 }

@@ -6,7 +6,7 @@ public class Employee implements Serializable {
 
     private Integer id;
     private String lastName;
-    private Integer gender;
+    private Integer gender;//性别 1男  0女
     private String email;
     private Integer dId;
 
