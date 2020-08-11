@@ -117,3 +117,4 @@ docker run -d -p 5672:5672 -p 15672:15672 --name 容器名 容器ID
             ```
             Remeberme()；
             ```
+- 监控管理：spring-boot-starter-actuator
