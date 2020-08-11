@@ -42,3 +42,16 @@ MyMvcConfig.java中加入容器
    2. @CacheEvict:详解看EmployeeServiceImpl.java,EmployeeController.java
    3. @CachePut:详解看EmployeeServiceImpl.java,EmployeeController.java
    4. redis：spring的cache可以使用redis进行缓存，相结合，使用了缓存管理器。如何整合详解看DepartmentServiceImpl.java,DeptController.java
+     - docker启动redis
+- RabbitMQ:自动配置(docker启动RabbitMQ)
+1. RabbitAutoConfiguration
+2. 有自动配置了连接工厂ConnectionFactory；
+3. RabbitProperties 封装了 RabbitMQ的配置
+4. RabbitTemplate ：给RabbitMQ发送和接受消息；
+5.  - AmqpAdmin ： RabbitMQ系统管理功能组件;
+    - AmqpAdmin：创建和删除 Queue，Exchange，Binding
+6. @EnableRabbit +  @RabbitListener 监听消息队列的内容
+7. 消息发送先前往消息交换机，再根据交换机中队列的Routing key往符合规则的队列发送消息。
+```linux
+docker run -d -p 5672:5672 -p 15672:15672 --name 容器名 容器ID
+```
